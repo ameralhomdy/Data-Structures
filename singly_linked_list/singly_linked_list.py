@@ -34,7 +34,21 @@ class LinkedList:
             self.head = new_node
 
     def add_to_tail(self, value):
-        # TODO
+        # create a new node
+        new_node = Node(value)
+        # 1. LL is empty
+        if self.head is None:
+            # update the head and tail attributes
+            self.head = new_node
+            self.tail = new_node
+
+        # 2. LL is not empty
+        else:
+            # update next_node of our tail
+            self.tail.set_next_node(new_node)
+            # update self.tail
+            self.tail = new_node
+
 
     def remove_head(self):
         # cases to consider?
