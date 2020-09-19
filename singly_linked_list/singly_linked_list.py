@@ -1,7 +1,7 @@
 class Node:
-    def __init__(self, value, next_node):
+    def __init__(self, value, next_node=None):
         self.value = value
-        selfn next_node = next_node
+        self.next_node = next_node
     
     def get_value(self):
         return self.value
@@ -53,7 +53,7 @@ class LinkedList:
     def remove_head(self):
         # cases to consider?
         # empty list
-        if self.head = None:
+        if self.head == None:
             return None
         # else return value of old list
         else:
@@ -78,7 +78,7 @@ class LinkedList:
             # update head & tail attributes = None
             self.head = None
             self.tail = None
-            return value
+            return ret_value
 
         # list with 2+ elements?
         else:
@@ -93,7 +93,18 @@ class LinkedList:
             return ret_value
 
     def contains(self, value):
-        # TODO time permitting
+        # loop through LL until next pointer is None
+        cur_node = self.head
+        while cur_node is not None:
+            if cur_node.get_value() == value:
+                return True
+        return False
 
     def get_max(self):
         # TODO time permitting
+        cur_node = self.head
+        while cur_node is not None:
+            max_num = -1
+            if cur_node.get_value() > max_num:
+                max_num = cur_node.get_value()
+        return max_num
