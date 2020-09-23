@@ -38,7 +38,7 @@ class BSTNode:
             return True # if yes, return true
             
         # if no
-        elif: target < self.value: # go left?
+        elif target < self.value: # go left?
             if self.left is None:
                 return False
             else:
